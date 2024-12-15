@@ -1,6 +1,5 @@
 import { createContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Keyboard } from 'react';
 export const GlobalContext = createContext(null);
 
 export default function GlobalState({ children }) {
@@ -54,7 +53,6 @@ export default function GlobalState({ children }) {
       if (data?.data?.recipes) {
         setRecipeList(data.data.recipes);
         setLoading(false);
-        Keyboard.dismiss(); // Dismiss the keyboard
         navigate('/');
       }
     } catch (error) {
